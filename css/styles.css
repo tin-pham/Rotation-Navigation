@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,700;1,200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000814;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  background: white;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.section.active {
+  position: relative;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
+}
+
+.card {
+  margin: 0 auto;
+  padding: 3em;
+  max-width: 1000px;
+}
+
+.card h2 {
+  font-size: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.card h2 span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.card h3 {
+  margin-top: 2rem;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.rotate {
+  width: 200px;
+  height: 200px;
+  background: #e63946;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.rotate .rectangle {
+  width: 140px;
+  height: 140px;
+  background: transparent;
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  right: 0;
+  bottom: 0;
+  color: white;
+  font-size: 2rem;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
+}
+
+.rotate .rectangle.active {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
+}
+
+.rotate .rectangle * {
+  position: absolute;
+  cursor: pointer;
+}
+
+.rotate .rectangle .fa-times {
+  bottom: 15px;
+  left: 15px;
+}
+
+.rotate .rectangle .fa-bars {
+  bottom: 15px;
+  right: 15px;
+}
+
+.nav-list {
+  position: fixed;
+  left: 5%;
+  bottom: 10%;
+}
+
+.nav-list ul {
+  list-style: none;
+}
+
+.nav-list ul li {
+  margin: 2rem 0;
+  padding-left: 1rem;
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
+}
+
+.nav-list ul li::marker {
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
+}
+
+.nav-list ul li#home {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.nav-list ul li#home::marker {
+  content: '\f015';
+}
+
+.nav-list ul li#person {
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  margin-left: 2rem;
+}
+
+.nav-list ul li#person::marker {
+  content: '\f007';
+}
+
+.nav-list ul li#mail {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+  margin-left: 4rem;
+}
+
+.nav-list ul li#mail::marker {
+  content: '\f0e0';
+}
+
+.nav-list ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.nav-list.active ul li {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
+}
+/*# sourceMappingURL=styles.css.map */

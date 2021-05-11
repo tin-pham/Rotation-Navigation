@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,700;1,200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+$section-rotate: -20deg;
+$transition: all 350ms ease-in;
+
+body {
+  background: #000814;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.section {
+  //   display: none;
+  width: 100%;
+  background: white;
+  transform: rotate(0);
+  transition: $transition;
+  transform-origin: top left;
+  &.active {
+    position: relative;
+    transform: rotate($section-rotate);
+    transform-origin: top left;
+    transition: $transition;
+  }
+}
+
+.card {
+  margin: 0 auto;
+  padding: 3em;
+  max-width: 1000px;
+
+  h2 {
+    font-size: 3rem;
+    display: flex;
+    display: block;
+    margin-bottom: 2rem;
+    span {
+      display: block;
+      font-size: 1rem;
+      font-weight: 200;
+      font-style: italic;
+    }
+  }
+
+  h3 {
+    margin-top: 2rem;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.rotate {
+  width: 200px;
+  height: 200px;
+  background: #e63946;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  .rectangle {
+    width: 140px;
+    height: 140px;
+    background: transparent;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-size: 2rem;
+
+    transform: rotate(0);
+    transition: $transition;
+    &.active {
+      transform: rotate(-90deg);
+      transition: $transition;
+    }
+    * {
+      position: absolute;
+      cursor: pointer;
+    }
+    .fa-times {
+      bottom: 15px;
+      left: 15px;
+    }
+
+    .fa-bars {
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+}
+
+.nav-list {
+  position: fixed;
+  left: 5%;
+  bottom: 10%;
+
+  // opacity: 0;
+
+  ul {
+    list-style: none;
+    li {
+      margin: 2rem 0;
+      padding-left: 1rem;
+      transition: $transition;
+      &::marker {
+        font-family: 'Font Awesome 5 Free';
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: white;
+      }
+
+      &#home {
+        transform: translateX(-100%);
+        &::marker {
+          content: '\f015';
+        }
+      }
+
+      &#person {
+        transform: translateX(-150%);
+        margin-left: 2rem;
+        &::marker {
+          content: '\f007';
+        }
+      }
+
+      &#mail {
+        transform: translateX(-200%);
+        margin-left: 4rem;
+        &::marker {
+          content: '\f0e0';
+        }
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &.active {
+    ul {
+      li {
+        transform: translateX(0) !important;
+        transition: $transition;
+      }
+    }
+  }
+}
